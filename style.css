@@ -1,0 +1,263 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+}
+
+.certification-card {
+  background-color: #fafafa;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 650px;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px 25px 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.header-text {
+  flex: 1;
+}
+
+.arabic-text {
+  font-size: 14px;
+  color: #dc2626;
+  font-weight: bold;
+  margin-bottom: 2px;
+  direction: rtl;
+  text-align: right;
+}
+
+.english-text {
+  font-size: 12px;
+  color: #dc2626;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.tuv-text {
+  font-size: 28px;
+  font-weight: bold;
+  color: #000;
+  letter-spacing: 2px;
+}
+
+.austria-text {
+  font-size: 14px;
+  font-weight: bold;
+  color: #dc2626;
+  letter-spacing: 1px;
+  margin-top: -3px;
+}
+
+.card-content {
+  display: flex;
+  padding: 25px;
+  gap: 30px;
+  position: relative;
+}
+
+.left-section {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.right-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 8px;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: bold;
+  color: #000;
+  text-transform: uppercase;
+}
+
+.value {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+  margin-left: 5px;
+}
+
+.gray-text {
+  color: #666;
+}
+
+.photo-placeholder {
+  width: 120px;
+  height: 140px;
+  background-color: #f0f0f0;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.photo-placeholder img {
+  width: 124px;
+  height: 162px;
+  border: 2px solid #000;
+}
+
+.photo-frame {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+  border-radius: 6px;
+  position: relative;
+}
+
+.photo-frame::after {
+  content: "PHOTO";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #999;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  font-size: 60px;
+  font-weight: bold;
+  color: rgba(34, 197, 94, 0.15);
+  pointer-events: none;
+  z-index: 1;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+}
+
+.bottom-border {
+  height: 8px;
+  background: linear-gradient(90deg, #666 0%, #666 100%);
+  margin-top: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .certification-card {
+    max-width: 100%;
+    margin: 10px;
+  }
+  
+  .card-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .right-section {
+    align-items: center;
+    padding-top: 0;
+    order: -1; /* Move photo section to top */
+  }
+  
+  .left-section {
+    order: 1; /* Move content section below photo */
+  }
+  
+  .photo-placeholder {
+    width: 100px;
+    height: 120px;
+  }
+  .photo-placeholder img {
+    width: 114px;
+    height: 152px;
+  }
+  
+  .watermark {
+    font-size: 40px;
+    letter-spacing: 4px;
+  }
+  
+  .tuv-text {
+    font-size: 24px;
+  }
+  
+  .field {
+    margin-bottom: 6px;
+  }
+  
+  .value {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .header-text {
+    order: 2;
+  }
+  
+  .logo {
+    order: 1;
+  }
+  
+  .arabic-text {
+    text-align: center;
+  }
+  
+  .watermark {
+    font-size: 30px;
+    letter-spacing: 2px;
+  }
+}
